@@ -1,0 +1,6 @@
+--editable .
+git+https://github.com/wimglenn/advent-of-code-data@examples
+pytest
+pytest-mock
+pytest-cov
+pytest-socket

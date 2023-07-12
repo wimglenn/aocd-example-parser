@@ -5,8 +5,8 @@ The annual programming challenge [Advent of Code](https://adventofcode.com/) fre
 
 Although the real puzzle inputs and answers differ by user, the example data is written directly in the puzzle prose and is available to unauthenticated users too.
 
-To illustrate what this means, the first puzzle of 2022 was [--- Day 1: Calorie Counting ---
-](https://adventofcode.com/2022/day/1) and it has an example data of 54 bytes:
+To illustrate what this means, the first puzzle of 2022 was [`--- Day 1: Calorie Counting ---`
+](https://adventofcode.com/2022/day/1) and it has the following example data (54 bytes):
 
 ```
 1000
@@ -27,15 +27,15 @@ To illustrate what this means, the first puzzle of 2022 was [--- Day 1: Calorie 
 
 The correct answers corresponding to this sample data were `24000` for part a, and `45000` for part b. The example data text was found in the first `<pre>` tag, and the answers were found in the last `<code>` blocks from each of the two `<article>` sections in the puzzle page HTML. Note that the first half of the puzzle must be solved before the second `<article>` tag shows up, so the second article is not visible to unauthenticated users.
 
-In 2022, this same pattern of example data locations in the HTML was repeated for four more days consecutively, before varying on [--- Day 6: Tuning Trouble ---](https://adventofcode.com/2022/day/6).
+In 2022, this same pattern of example data locations in the HTML was repeated for four more days, consecutively, before varying on [`--- Day 6: Tuning Trouble ---`](https://adventofcode.com/2022/day/6).
 
 
 What is this package?
 ---------------------
 
-This package provides an implementation of an [aocd example parser](https://github.com/wimglenn/advent-of-code-data/blob/main/aocd/examples.py) plugin, which attempts to parse the sample data and solutions automatically from the puzzle prose.
+This package provides an implementation of an [aocd example parser](https://github.com/wimglenn/advent-of-code-data/blob/main/aocd/examples.py) plugin, which attempts to parse the sample data and corresponding answers automatically from the puzzle prose.
 
-An aocd example parser plugin is an [entry-point](https://packaging.python.org/en/latest/specifications/entry-points/) in the `"adventofcode.examples"` group. It should be a callable accepting two arguments, like this:
+An aocd example parser plugin is an [entry-point](https://packaging.python.org/en/latest/specifications/entry-points/) in the `"adventofcode.examples"` group. It must be a callable accepting two arguments, like this:
 
 ```python
 from aocd.examples import Example
@@ -51,8 +51,9 @@ def my_plugin(page: Page, datas: list[str]) -> list[Example]:
     return result
 ```
 
-Such a package should register an entry point in the `"adventofcode.examples"` group within the package metadata, by adding something like this in your `pyproject.toml` file:
+This callable must return a list of `Example` instances. If no examples can be parsed, you should return an empty list `[]`, rather than `None`.
 
+Any package providing an example parser should register an entry point in the `"adventofcode.examples"` group within the package metadata, by adding something like this in your `pyproject.toml` file:
 ```toml
 [project.entry-points."adventofcode.examples"]
 my_example_parser = "my_module:my_plugin"
@@ -80,19 +81,18 @@ And it should be selectable for use/verification with
 $ aoce --plugin=my_example_parser
 ```
 
+
 Why a plugin? Wouldn't it be simpler to write a parser in aocd directly?
 ------------------------------------------------------------------------
 
-Most of the logic for my parser _is_ written in `aocd` directly.
-
 I've created this package, and the corresponding tester `aoce` in `advent-of-code-data`, to open it up to the community to try and come up with a better parser.
-This package exemplifies the interface that a parser should work with, so to speak.
+This package exemplifies the interface that a parser should work with, so to speak, and `aocd` uses this plugin for [dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food). As an added benifit, it means the example parsing can be frequently updated to ensure correct results are returned for previous puzzles, without requiring a new release of `aocd` itself.
 
 There are so many creative and smart people hacking on AoC that I'm sure several of you can come up with something much better than I was able to!
 The default implementation from `aocd` fails more than 40% of the time, so you don't have a very high bar to beat.
 If someone comes up with a better-performing parser than "_take the first pre as input data, take answers from the last codeblocks in each article_", I will make their implementation the new default in a future version of `aocd`.
 
-Please note that you probably shouldn't try to get to 100% success, that will be super-difficult if not _impossible_.
+If you're considering writing an example parser, it's not advisable to try to get to 100% success rate, that will be super-difficult if not _impossible_.
 Some of the puzzles have [many examples](https://adventofcode.com/2022/day/6), some are [really tricky to parse](https://adventofcode.com/2018/day/15), and some offer [no example at all](https://adventofcode.com/2018/day/21).
 But difficulty aside, the main reason is that you needn't "overfit" to previous puzzles.
 This is because `advent-of-code-data` always intends to return correct example data _for past puzzles_ by hardcoding the code-block locations.
@@ -100,12 +100,13 @@ This is because `advent-of-code-data` always intends to return correct example d
 **The only thing that matters for a parser plugin is how well it can perform for a never-before seen puzzle**.
 That is, the goal is to maximize the _probability_ that your parser will somehow find the right result at the instant a new puzzle unlocks.
 
+
 How well does the default implementation perform?
 -------------------------------------------------
 
 It depends on the year.
 The locations got a lot more consistent in recent years, so it has performed better more recently.
-The last thing the `aoce` script points out is a rough percentage the parser got right.
+The final line that `aoce` script prints out is a rough percentage the parser got right.
 
 ```bash
 $ for YEAR in {2015..2022};

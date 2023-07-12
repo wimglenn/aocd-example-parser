@@ -1,8 +1,11 @@
-from aocd.examples import extract_examples
 from aocd.examples import Example
 from aocd.examples import Page
 
+from .extraction import extract_examples
+from .util import real_datas_unused
 
+
+@real_datas_unused
 def plugin(page: Page, datas: list[str]) -> list[Example]:
     """
     Example parser implementation which always uses the aocd default locators.
@@ -20,9 +23,10 @@ def plugin(page: Page, datas: list[str]) -> list[Example]:
     The last <code> block of the second <article> contains the part b answer.
     The extra context is nothing.
     """
-    return extract_examples(page.raw_html, use_default_locators=True)
+    return extract_examples(page, use_default_locators=True)
 
 
+@real_datas_unused
 def hardcoded_locations(page: Page, datas: list[str]) -> list[Example]:
     """
     Example parser implementation which always uses the pre-calculated locators.
@@ -31,4 +35,4 @@ def hardcoded_locations(page: Page, datas: list[str]) -> list[Example]:
     other example parser implementations against. For puzzles that hadn't been released
     yet, the results are the same as the "default locators" plugin defined above.
     """
-    return extract_examples(page.raw_html)
+    return extract_examples(page)
