@@ -1,0 +1,31 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "aocd_example_parser"
+version = "0.0.1"
+description = "Default implementation of an example parser plugin for advent-of-code-data"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Games/Entertainment :: Puzzle Games",
+]
+
+[[project.authors]]
+name = "Wim Glenn"
+email = "hey@wimglenn.com"
+
+[project.license]
+file = "LICENSE"
+
+[project.urls]
+Home = "https://github.com/wimglenn/aocd-example-parser"
+
+[project.entry-points."adventofcode.examples"]
+aocd_examples_default = "aocd_example_parser:plugin"
+aocd_examples_canned = "aocd_example_parser:hardcoded_locations"
