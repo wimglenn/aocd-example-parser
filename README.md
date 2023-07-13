@@ -123,10 +123,10 @@ There are so many creative and smart people hacking on AoC that I'm sure several
 The default implementation from `aocd` fails more than 40% of the time, so you don't have a very high bar to beat.
 If someone comes up with a better-performing parser than "_take the first pre as input data, take answers from the last codeblocks in each article_", I will make their implementation the new default in a future version of `aocd`.
 
-If you're considering writing an example parser, it's not advisable to try to get to 100% success rate, that will be super-difficult if not _impossible_.
+If you're considering writing an example parser, it's not advisable to strive for 100% success rate, that will be super-difficult if not _impossible_.
 Some of the puzzles have [many examples](https://adventofcode.com/2020/day/15), some are [really tricky to parse](https://adventofcode.com/2018/day/15), and some offer [no example at all](https://adventofcode.com/2018/day/21).
 But difficulty aside, the main reason is that you needn't "overfit" to previous puzzles.
-This is because `advent-of-code-data` always intends to return correct example data _for past puzzles_ by hardcoding the code-block locations.
+This is because `advent-of-code-data` always intends to return correct example data _for past puzzles_ by hardcoding the [relevant code-block locations](https://github.com/wimglenn/aocd-example-parser/blob/main/aocd_example_parser/examples.json). The unwritten rule is that `aocd-example-parser` versions 2023.* will return verified results for Advent of Code <= 2022, and unverified best-effort result for 2023+.
 
 **The only thing that matters for a parser plugin is how well it can perform for a never-before seen puzzle**.
 That is, the goal is to maximize the _probability_ that your parser will somehow find the right result at the instant a new puzzle unlocks.
