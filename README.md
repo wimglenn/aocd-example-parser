@@ -61,6 +61,9 @@ my_example_parser = "my_module:my_plugin"
 
 See the [Entry points](https://peps.python.org/pep-0621/#entry-points) section in [_PEP 621 – Storing project metadata in pyproject.toml_](https://peps.python.org/pep-0621) for more information.
 
+How to use/select a parser plugin?
+----------------------------------
+
 When an example parser package is correctly installed alongside [advent-of-code-data >= 2.0.0](https://github.com/wimglenn/advent-of-code-data), it will show up as a choice in `aoce --help`:
 
 ```bash
@@ -81,6 +84,34 @@ And it should be selectable for use/verification with
 $ aoce --plugin=my_example_parser
 ```
 
+To print the actual results produced by a parser against a single puzzle, you may use `aocd --example-parser`. To demonstrate using the results for [`--- Day 1: Calorie Counting ---`
+](https://adventofcode.com/2022/day/1) again:
+
+```bash
+$ aocd 2022 1 --example-parser=aocd_examples_canned
+                        --- Day 1: Calorie Counting ---
+                      https://adventofcode.com/2022/day/1
+------------------------------- Example data 1/1 -------------------------------
+1000
+2000
+3000
+
+4000
+
+5000
+6000
+
+7000
+8000
+9000
+
+10000
+--------------------------------------------------------------------------------
+answer_a: 24000
+answer_b: 45000
+--------------------------------------------------------------------------------
+```
+
 
 Why a plugin? Wouldn't it be simpler to write a parser in aocd directly?
 ------------------------------------------------------------------------
@@ -93,7 +124,7 @@ The default implementation from `aocd` fails more than 40% of the time, so you d
 If someone comes up with a better-performing parser than "_take the first pre as input data, take answers from the last codeblocks in each article_", I will make their implementation the new default in a future version of `aocd`.
 
 If you're considering writing an example parser, it's not advisable to try to get to 100% success rate, that will be super-difficult if not _impossible_.
-Some of the puzzles have [many examples](https://adventofcode.com/2022/day/6), some are [really tricky to parse](https://adventofcode.com/2018/day/15), and some offer [no example at all](https://adventofcode.com/2018/day/21).
+Some of the puzzles have [many examples](https://adventofcode.com/2020/day/15), some are [really tricky to parse](https://adventofcode.com/2018/day/15), and some offer [no example at all](https://adventofcode.com/2018/day/21).
 But difficulty aside, the main reason is that you needn't "overfit" to previous puzzles.
 This is because `advent-of-code-data` always intends to return correct example data _for past puzzles_ by hardcoding the code-block locations.
 
