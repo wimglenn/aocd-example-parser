@@ -3,7 +3,6 @@ from aocd.examples import Page
 from aocd_example_parser.extraction import extract_examples
 
 
-
 fake_prose = """
 <title>Day 1 - Advent of Code 1234</title>
 <article>
