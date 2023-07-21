@@ -68,12 +68,12 @@ When an example parser package is correctly installed alongside [advent-of-code-
 
 ```bash
 $ aoce --help
-usage: aoce [-h] [-p {aocd_examples_canned,aocd_examples_default}] [-y YEARS [YEARS ...]] [-v]
+usage: aoce [-h] [-p {canned,default}] [-y YEARS [YEARS ...]] [-v]
 
 optional arguments:
   -h, --help            show this help message and exit
-  -p {aocd_examples_canned,aocd_examples_default}, --plugin {aocd_examples_canned,aocd_examples_default}
-                        plugin to use for example extraction testing (default: aocd_examples_canned)
+  -p {canned,default}, --plugin {canned,default}
+                        plugin to use for example extraction testing (default: canned)
   -y YEARS [YEARS ...], --years YEARS [YEARS ...]
   -v, --verbose         increased logging (may be specified multiple)
 ```
@@ -88,7 +88,7 @@ To print the actual results produced by a parser against a single puzzle, you ma
 ](https://adventofcode.com/2022/day/1) again:
 
 ```bash
-$ aocd 2022 1 --example-parser=aocd_examples_canned
+$ aocd 2022 1 --example-parser=canned
                         --- Day 1: Calorie Counting ---
                       https://adventofcode.com/2022/day/1
 ------------------------------- Example data 1/1 -------------------------------
@@ -141,28 +141,28 @@ The final line that `aoce` script prints out is a rough percentage the parser go
 
 ```bash
 $ for YEAR in {2015..2022};
-do echo -n "$YEAR " && aoce -p aocd_examples_default -y $YEAR | tail -1;
+do echo -n "$YEAR " && aoce -p default -y $YEAR | tail -1;
 done
-2015 plugin 'aocd_examples_default' scored 78/336 (23.2%)
-2016 plugin 'aocd_examples_default' scored 53/159 (33.3%)
-2017 plugin 'aocd_examples_default' scored 85/221 (38.5%)
-2018 plugin 'aocd_examples_default' scored 69/212 (32.5%)
-2019 plugin 'aocd_examples_default' scored 43/204 (21.1%)
-2020 plugin 'aocd_examples_default' scored 67/183 (36.6%)
-2021 plugin 'aocd_examples_default' scored 82/152 (53.9%)
-2022 plugin 'aocd_examples_default' scored 71/120 (59.2%)
+2015 plugin 'default' scored 78/336 (23.2%)
+2016 plugin 'default' scored 53/159 (33.3%)
+2017 plugin 'default' scored 85/221 (38.5%)
+2018 plugin 'default' scored 69/212 (32.5%)
+2019 plugin 'default' scored 43/204 (21.1%)
+2020 plugin 'default' scored 67/183 (36.6%)
+2021 plugin 'default' scored 82/152 (53.9%)
+2022 plugin 'default' scored 71/120 (59.2%)
 ```
 
 Averaging across all years, we're currently right about a third of the time:
 
 ```bash
-$ aoce -p aocd_examples_default | tail -1
-plugin 'aocd_examples_default' scored 548/1587 (34.5%)
+$ aoce -p default | tail -1
+plugin 'default' scored 548/1587 (34.5%)
 ```
 
 Of course, the "reference" plugin is always correct _for historical puzzles_.
 
 ```bash
-$ aoce -p aocd_examples_canned | tail -1
-plugin 'aocd_examples_canned' scored 1587/1587 (100.0%)
+$ aoce -p canned | tail -1
+plugin 'canned' scored 1587/1587 (100.0%)
 ```

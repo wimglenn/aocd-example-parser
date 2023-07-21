@@ -27,5 +27,5 @@ file = "LICENSE"
 Home = "https://github.com/wimglenn/aocd-example-parser"
 
 [project.entry-points."adventofcode.examples"]
-aocd_examples_default = "aocd_example_parser:plugin"
-aocd_examples_canned = "aocd_example_parser:hardcoded_locations"
+default = "aocd_example_parser.extraction:default"
+canned = "aocd_example_parser.extraction:canned"
