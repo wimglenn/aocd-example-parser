@@ -5,11 +5,6 @@ from functools import cache
 from aocd.examples import Example
 from aocd.examples import Page
 
-
-from aocd.examples import Example
-from aocd.examples import Page
-
-from .extraction import extract_examples
 from .util import real_datas_unused
 
 
