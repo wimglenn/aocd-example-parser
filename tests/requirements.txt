@@ -1,5 +1,5 @@
 --editable .
-git+https://github.com/wimglenn/advent-of-code-data@examples
+advent-of-code-data >= 2.0.0
 pytest
 pytest-mock
 pytest-cov
