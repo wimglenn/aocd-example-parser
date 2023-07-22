@@ -81,7 +81,7 @@ options:
 And it should be selectable for use/verification with
 
 ```bash
-$ aoce --plugin=my_example_parser
+$ aoce --example-parser=my_example_parser
 ```
 
 To print the actual results produced by a parser against a single puzzle, you may use `aocd --example-parser`. To demonstrate using the results for [`--- Day 1: Calorie Counting ---`](https://adventofcode.com/2022/day/1) again:
