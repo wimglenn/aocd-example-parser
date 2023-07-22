@@ -5,8 +5,7 @@ The annual programming challenge [Advent of Code](https://adventofcode.com/) fre
 
 Although the real puzzle inputs and answers differ by user, the example data is written directly in the puzzle prose and is available to unauthenticated users too.
 
-To illustrate what this means, the first puzzle of 2022 was [`--- Day 1: Calorie Counting ---`
-](https://adventofcode.com/2022/day/1) and it has the following example data (54 bytes):
+To illustrate what this means, the first puzzle of 2022 was [`--- Day 1: Calorie Counting ---`](https://adventofcode.com/2022/day/1) and it has the following example data (54 bytes):
 
 ```
 1000
@@ -68,14 +67,15 @@ When an example parser package is correctly installed alongside [advent-of-code-
 
 ```bash
 $ aoce --help
-usage: aoce [-h] [-p {canned,default}] [-y YEARS [YEARS ...]] [-v]
+usage: aoce [-h] [-e {reference,simple}] [-y 2015+ [2015+ ...]] [-v]
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
-  -p {canned,default}, --plugin {canned,default}
-                        plugin to use for example extraction testing (default: canned)
-  -y YEARS [YEARS ...], --years YEARS [YEARS ...]
-  -v, --verbose         increased logging (may be specified multiple)
+  -e {reference,simple}, --example-parser {reference,simple}
+                        plugin to use for example extraction testing (default: reference)
+  -y 2015+ [2015+ ...], --years 2015+ [2015+ ...]
+                        years to run the parser against (can specify multiple)
+  -v, --verbose         increased logging (-v INFO, -vv DEBUG)
 ```
 
 And it should be selectable for use/verification with
@@ -84,11 +84,10 @@ And it should be selectable for use/verification with
 $ aoce --plugin=my_example_parser
 ```
 
-To print the actual results produced by a parser against a single puzzle, you may use `aocd --example-parser`. To demonstrate using the results for [`--- Day 1: Calorie Counting ---`
-](https://adventofcode.com/2022/day/1) again:
+To print the actual results produced by a parser against a single puzzle, you may use `aocd --example-parser`. To demonstrate using the results for [`--- Day 1: Calorie Counting ---`](https://adventofcode.com/2022/day/1) again:
 
 ```bash
-$ aocd 2022 1 --example-parser=canned
+$ aocd 2022 1 --example-parser=reference
                         --- Day 1: Calorie Counting ---
                       https://adventofcode.com/2022/day/1
 ------------------------------- Example data 1/1 -------------------------------
@@ -141,28 +140,28 @@ The final line that `aoce` script prints out is a rough percentage the parser go
 
 ```bash
 $ for YEAR in {2015..2022};
-do echo -n "$YEAR " && aoce -p default -y $YEAR | tail -1;
+do echo -n "$YEAR " && aoce -e simple -y $YEAR | tail -1;
 done
-2015 plugin 'default' scored 78/336 (23.2%)
-2016 plugin 'default' scored 53/159 (33.3%)
-2017 plugin 'default' scored 85/221 (38.5%)
-2018 plugin 'default' scored 69/212 (32.5%)
-2019 plugin 'default' scored 43/204 (21.1%)
-2020 plugin 'default' scored 67/183 (36.6%)
-2021 plugin 'default' scored 82/152 (53.9%)
-2022 plugin 'default' scored 71/120 (59.2%)
+2015 plugin 'simple' scored 78/336 (23.2%)
+2016 plugin 'simple' scored 53/159 (33.3%)
+2017 plugin 'simple' scored 85/221 (38.5%)
+2018 plugin 'simple' scored 69/212 (32.5%)
+2019 plugin 'simple' scored 43/204 (21.1%)
+2020 plugin 'simple' scored 67/183 (36.6%)
+2021 plugin 'simple' scored 82/152 (53.9%)
+2022 plugin 'simple' scored 71/120 (59.2%)
 ```
 
 Averaging across all years, we're currently right about a third of the time:
 
 ```bash
-$ aoce -p default | tail -1
-plugin 'default' scored 548/1587 (34.5%)
+$ aoce -e simple | tail -1
+plugin 'simple' scored 548/1587 (34.5%)
 ```
 
 Of course, the "reference" plugin is always correct _for historical puzzles_.
 
 ```bash
-$ aoce -p canned | tail -1
-plugin 'canned' scored 1587/1587 (100.0%)
+$ aoce -e reference | tail -1
+plugin 'reference' scored 1587/1587 (100.0%)
 ```
