@@ -116,7 +116,7 @@ Why a plugin? Wouldn't it be simpler to write a parser in aocd directly?
 ------------------------------------------------------------------------
 
 I've created this package, and the corresponding tester `aoce` in `advent-of-code-data`, to open it up to the community to try and come up with a better parser.
-This package exemplifies the interface that a parser should work with, so to speak, and `aocd` uses this plugin for [dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food). As an added benifit, it means the example parsing can be frequently updated to ensure correct results are returned for previous puzzles, without requiring a new release of `aocd` itself.
+This package exemplifies the interface that a parser should work with, so to speak, and `aocd` uses this plugin for [dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food). As an added benefit, it means the example parsing can be frequently updated to ensure correct results are returned for previous puzzles, without requiring a new release of `aocd` itself.
 
 There are so many creative and smart people hacking on AoC that I'm sure someone can up with something much better than I was able to!
 The default implementation from `aocd` fails more than 40% of the time, so you don't have a very high bar to beat. Anything that scores better than `aoce -e simple` is an improvement. If someone comes up with a better-performing parser than "_take the first pre as input data, take answers from the last codeblocks in each article_", I will make their implementation the new default in a future version of `aocd`.
