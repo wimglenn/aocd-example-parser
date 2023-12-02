@@ -2414,5 +2414,14 @@
       "input_data": "a_code[15]",
       "answer_a":   "a_code[16]"
     }
+  ],
+  "2023/01": [
+    {
+      "answer_b": "None"
+    },
+    {
+      "input_data": "b_pre[0]",
+      "answer_a": "None"
+    }
   ]
 }
