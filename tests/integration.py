@@ -25,11 +25,16 @@ def main():
     for puzzle in Puzzle.all():
         date = f"{puzzle.year}/{puzzle.day:02d}"
         example_dir = input_dir / date
+        egs = [x.name.split(".")[0] for x in example_dir.glob("*.txt")]
+        n_examples_expected = max([1 + int(x) for x in egs if x.isdigit()], default=0)
+        if len(puzzle.examples) != n_examples_expected:
+            print(f"{date} {n_examples_expected=} but {len(puzzle.examples)=}")
+            rc += 1
         for i, example in enumerate(puzzle.examples):
             example_file = example_dir / f"{i}.txt"
             if not example_file.is_file():
                 try:
-                    [example_file] = example_dir.glob(f"{i}_*.txt")
+                    [example_file] = example_dir.glob(f"{i}.*.txt")
                 except ValueError:
                     print(f"missing example {i} {date}")
                     rc += 1
