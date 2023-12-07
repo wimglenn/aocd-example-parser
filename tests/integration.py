@@ -43,14 +43,22 @@ def main():
             remove_trailing_comments(lines)
             *lines, expected_answer_a, expected_answer_b = lines
             expected_input_data = "\n".join(lines).rstrip()
-            result = [
-                compare(example.input_data.rstrip(), expected_input_data.rstrip(), raises=False),
-                compare(example.answer_a or "-", expected_answer_a, raises=False),
-                compare(example.answer_b or "-", expected_answer_b, raises=False),
-            ]
-            for r in result:
-                if r is not None:
-                    print("incorrect", puzzle.url, r)
+            diff = compare(
+                actual=example.input_data.rstrip(),
+                expected=expected_input_data.rstrip(),
+                raises=False
+            )
+            if diff is not None:
+                print("incorrect example data for", puzzle.url, diff)
+                rc += 1
+            for part in "ab":
+                diff = compare(
+                    actual=getattr(example, f"answer_{part}") or "-",
+                    expected=locals()[f"expected_answer_{part}"],
+                    raises=False,
+                )
+                if diff is not None:
+                    print(f"incorrect answer {part} for", puzzle.url, diff)
                     rc += 1
     sys.exit(rc)
 
