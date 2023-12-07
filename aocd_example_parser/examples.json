@@ -2423,5 +2423,10 @@
       "input_data": "b_pre[0]",
       "answer_a": "None"
     }
+  ],
+  "2023/06": [
+    {
+      "answer_a": "a_code[-4]"
+    }
   ]
 }
