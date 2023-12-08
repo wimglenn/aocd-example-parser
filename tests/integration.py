@@ -49,7 +49,7 @@ def main():
                 raises=False
             )
             if diff is not None:
-                print("incorrect example data for", puzzle.url, diff)
+                print(f"incorrect example data ({i}) for", puzzle.url, diff)
                 rc += 1
             for part in "ab":
                 diff = compare(
@@ -58,7 +58,7 @@ def main():
                     raises=False,
                 )
                 if diff is not None:
-                    print(f"incorrect answer {part} for", puzzle.url, diff)
+                    print(f"incorrect answer {part} ({i}) for", puzzle.url, diff)
                     rc += 1
     sys.exit(rc)
 
