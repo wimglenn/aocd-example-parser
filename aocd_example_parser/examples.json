@@ -2417,63 +2417,73 @@
   ],
   "2023/01": [
     {
-      "answer_b": "None"
+      "answer_b":   "None"
     },
     {
       "input_data": "b_pre[0]",
-      "answer_a": "None"
+      "answer_a":   "None"
     }
   ],
   "2023/06": [
     {
-      "answer_a": "a_code[-4]"
+      "answer_a":   "a_code[-4]"
     }
   ],
   "2023/08": [
     {
-      "answer_a": "a_code[-9]",
-      "answer_b": "None"
+      "answer_a":   "a_code[-9]",
+      "answer_b":   "None"
     },
     {
       "input_data": "a_pre[1]",
-      "answer_a": "a_code[-5]",
-      "answer_b": "None"
+      "answer_a":   "a_code[-5]",
+      "answer_b":   "None"
     },
     {
       "input_data": "b_pre[0]",
-      "answer_a": "None",
-      "answer_b": "b_code[-3]"
+      "answer_a":   "None",
+      "answer_b":   "b_code[-3]"
     }
   ],
   "2023/10": [
     {
       "input_data": "a_pre[1]",
-      "answer_a": "a_em[-3]",
-      "answer_b": "None"
+      "answer_a":   "a_em[-3]",
+      "answer_b":   "None"
     },
     {
       "input_data": "a_pre[3]",
-      "answer_a": "a_em[-2]",
-      "answer_b": "None"
+      "answer_a":   "a_em[-2]",
+      "answer_b":   "None"
     },
     {
       "input_data": "b_pre[0]",
-      "answer_a": "None",
-      "answer_b": "b_code[9]"
+      "answer_a":   "None",
+      "answer_b":   "b_code[9]"
     },
     {
       "input_data": "b_pre[2]",
-      "answer_a": "None",
-      "answer_b": "b_code[-10]"
+      "answer_a":   "None",
+      "answer_b":   "b_code[-10]"
     },
     {
       "input_data": "b_pre[3]",
-      "answer_a": "None",
-      "answer_b": "b_code[-5]"
+      "answer_a":   "None",
+      "answer_b":   "b_code[-5]"
     },
     {
       "input_data": "b_pre[5]",
-      "answer_a": "None"
+      "answer_a":   "None"
+    }
+  ],
+  "2023/11": [
+    {
+      "extra":      "'expansion_factor=100'"
+    }
+  ],
+  "2023/12": [
+    {
+      "input_data": "a_pre[1]"
     }
   ]
 }
