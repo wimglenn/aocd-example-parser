@@ -2490,5 +2490,19 @@
     {
       "answer_b":   "b_code[-2]"
     }
+  ],
+  "2023/16": [
+    {
+      "answer_b":   "b_code[-2]"
+    }
+  ],
+  "2023/17": [
+    {
+      "answer_b": "b_code[-4]"
+    },
+    {
+      "input_data": "b_pre[1]",
+      "answer_a": "None"
+    }
   ]
 }
