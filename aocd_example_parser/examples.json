@@ -2498,11 +2498,22 @@
   ],
   "2023/17": [
     {
-      "answer_b": "b_code[-4]"
+      "answer_b":   "b_code[-4]"
     },
     {
       "input_data": "b_pre[1]",
-      "answer_a": "None"
+      "answer_a":   "None"
+    }
+  ],
+  "2023/20": [
+    {
+      "answer_a":   "a_code[-6]",
+      "answer_b":   "None"
+    },
+    {
+      "input_data": "a_pre[2]",
+      "answer_a":   "a_code[-2]",
+      "answer_b":   "None"
     }
   ]
 }
