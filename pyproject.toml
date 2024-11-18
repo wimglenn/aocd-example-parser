@@ -4,7 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "aocd-example-parser"
-version = "2023.12.20"
+version = "2023.12.21"
 description = "Implementation of example parser plugins for advent-of-code-data"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -17,7 +17,7 @@ classifiers = [
 ]
 
 [[project.authors]]
-name = "Wim Glenn"
+name = "Wim Jeantine-Glenn"
 email = "hey@wimglenn.com"
 
 [project.license]

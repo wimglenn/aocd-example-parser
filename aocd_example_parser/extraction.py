@@ -36,10 +36,8 @@ def extract_examples(page: Page, use_default_locators: bool = False) -> list[Exa
         locs = locators.get(key, [default])
     for loc in locs:
         vals = []
-        for k in "input_data", "answer_a", "answer_b", "extra":
+        for k in "input_data", "answer_a", "answer_b":
             pos = loc.get(k, default[k])
-            if k == "extra" and pos is None:
-                break
             if k == "answer_b" and (part_b_locked or page.day == 25):
                 vals.append(None)
                 continue
@@ -52,6 +50,8 @@ def extract_examples(page: Page, use_default_locators: bool = False) -> list[Exa
             if val is not None:
                 val = val.rstrip("\r\n")
             vals.append(val)
+        if loc.get("extra"):
+            vals.append(loc["extra"])
         if vals[0] is not None:
             result.append(Example(*vals))
     return result

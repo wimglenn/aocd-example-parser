@@ -186,49 +186,49 @@
       "input_data": "a_pre[0].replace('d', 'a')",
       "answer_a":   "a_pre[1].split('d: ')[1].split()[0]",
       "answer_b":   "None",
-      "extra":      "'wire=d'"
+      "extra":      {"wire": "d"}
     },
     {
       "input_data": "a_pre[0].replace('e', 'a')",
       "answer_a":   "a_pre[1].split('e: ')[1].split()[0]",
       "answer_b":   "None",
-      "extra":      "'wire=e'"
+      "extra":      {"wire": "e"}
     },
     {
       "input_data": "a_pre[0].replace('f', 'a')",
       "answer_a":   "a_pre[1].split('f: ')[1].split()[0]",
       "answer_b":   "None",
-      "extra":      "'wire=f'"
+      "extra":      {"wire": "f"}
     },
     {
       "input_data": "a_pre[0].replace('g', 'a')",
       "answer_a":   "a_pre[1].split('g: ')[1].split()[0]",
       "answer_b":   "None",
-      "extra":      "'wire=g'"
+      "extra":      {"wire": "g"}
     },
     {
       "input_data": "a_pre[0].replace('h', 'a')",
       "answer_a":   "a_pre[1].split('h: ')[1].split()[0]",
       "answer_b":   "None",
-      "extra":      "'wire=h'"
+      "extra":      {"wire": "h"}
     },
     {
       "input_data": "a_pre[0].replace('i', 'a')",
       "answer_a":   "a_pre[1].split('i: ')[1].split()[0]",
       "answer_b":   "None",
-      "extra":      "'wire=i'"
+      "extra":      {"wire": "i"}
     },
     {
       "input_data": "a_pre[0].replace('x', 'a')",
       "answer_a":   "a_pre[1].split('x: ')[1].split()[0]",
       "answer_b":   "None",
-      "extra":      "'wire=x'"
+      "extra":      {"wire": "x"}
     },
     {
       "input_data": "a_pre[0].replace('y', 'a')",
       "answer_a":   "a_pre[1].split('y: ')[1].split()[0]",
       "answer_b":   "None",
-      "extra":      "'wire=y'"
+      "extra":      {"wire": "y"}
     }
   ],
   "2015/08": [
@@ -245,32 +245,32 @@
     {
       "input_data": "a_code[0]",
       "answer_a":   "str(len(a_code[1]))",
-      "extra":      "'iterations=1'"
+      "extra":      {"iterations": 1}
     },
     {
       "input_data": "a_li[0].codes[0]",
       "answer_a":   "str(len(a_li[0].codes[1]))",
-      "extra":      "'iterations=1'"
+      "extra":      {"iterations": 1}
     },
     {
       "input_data": "a_li[1].codes[0]",
       "answer_a":   "str(len(a_li[1].codes[1]))",
-      "extra":      "'iterations=1'"
+      "extra":      {"iterations": 1}
     },
     {
       "input_data": "a_li[2].codes[0]",
       "answer_a":   "str(len(a_li[2].codes[1]))",
-      "extra":      "'iterations=1'"
+      "extra":      {"iterations": 1}
     },
     {
       "input_data": "a_li[3].codes[0]",
       "answer_a":   "str(len(a_li[3].codes[1]))",
-      "extra":      "'iterations=1'"
+      "extra":      {"iterations": 1}
     },
     {
       "input_data": "a_li[4].codes[0]",
       "answer_a":   "str(len(a_li[4].codes[1]))",
-      "extra":      "'iterations=1'"
+      "extra":      {"iterations": 1}
     }
   ],
   "2015/11": [
@@ -362,7 +362,7 @@
       "input_data": "[li.text for li in a_li]",
       "answer_a":   "a_code[0]",
       "answer_b":   "b_code[0]",
-      "extra":      "'t=1000'"
+      "extra":      {"t": 1000}
     }
   ],
   "2015/15": [
@@ -375,7 +375,7 @@
     {
       "input_data": "a_code[1:6]",
       "answer_a":   "str(len(a_li))",
-      "extra":      "'liters=25'"
+      "extra":      {"liters": 25}
     }
   ],
   "2015/18": [
@@ -383,55 +383,55 @@
       "input_data": "a_pre[1].split('\\n\\n')[0].split(':\\n')[1]",
       "answer_a":   "str(a_pre[1].split('\\n\\n')[1].count('#'))",
       "answer_b":   "None",
-      "extra":      "'iterations=1'"
+      "extra":      {"iterations": 1}
     },
     {
       "input_data": "a_pre[1].split('\\n\\n')[1].split(':\\n')[1]",
       "answer_a":   "str(a_pre[1].split('\\n\\n')[2].count('#'))",
       "answer_b":   "None",
-      "extra":      "'iterations=1'"
+      "extra":      {"iterations": 1}
     },
     {
       "input_data": "a_pre[1].split('\\n\\n')[2].split(':\\n')[1]",
       "answer_a":   "str(a_pre[1].split('\\n\\n')[3].count('#'))",
       "answer_b":   "None",
-      "extra":      "'iterations=1'"
+      "extra":      {"iterations": 1}
     },
     {
       "input_data": "a_pre[1].split('\\n\\n')[3].split(':\\n')[1]",
       "answer_a":   "str(a_pre[1].split('\\n\\n')[4].count('#'))",
       "answer_b":   "None",
-      "extra":      "'iterations=1'"
+      "extra":      {"iterations": 1}
     },
     {
       "input_data": "b_pre[0].split('\\n\\n')[0].split(':\\n')[1]",
       "answer_a":   "None",
       "answer_b":   "str(b_pre[0].split('\\n\\n')[1].count('#'))",
-      "extra":      "'iterations=1'"
+      "extra":      {"iterations": 1}
     },
     {
       "input_data": "b_pre[0].split('\\n\\n')[1].split(':\\n')[1]",
       "answer_a":   "None",
       "answer_b":   "str(b_pre[0].split('\\n\\n')[2].count('#'))",
-      "extra":      "'iterations=1'"
+      "extra":      {"iterations": 1}
     },
     {
       "input_data": "b_pre[0].split('\\n\\n')[2].split(':\\n')[1]",
       "answer_a":   "None",
       "answer_b":   "str(b_pre[0].split('\\n\\n')[3].count('#'))",
-      "extra":      "'iterations=1'"
+      "extra":      {"iterations": 1}
     },
     {
       "input_data": "b_pre[0].split('\\n\\n')[3].split(':\\n')[1]",
       "answer_a":   "None",
       "answer_b":   "str(b_pre[0].split('\\n\\n')[4].count('#'))",
-      "extra":      "'iterations=1'"
+      "extra":      {"iterations": 1}
     },
     {
       "input_data": "b_pre[0].split('\\n\\n')[4].split(':\\n')[1]",
       "answer_a":   "None",
       "answer_b":   "str(b_pre[0].split('\\n\\n')[5].count('#'))",
-      "extra":      "'iterations=1'"
+      "extra":      {"iterations": 1}
     }
   ],
   "2015/19": [
@@ -744,7 +744,7 @@
       "input_data": "[li.code.text for li in a_li[3:]]",
       "answer_a":   "str(a_pre[-1].count('#'))",
       "answer_b":   "None",
-      "extra":      "'im=7x3'"
+      "extra":      {"screen_width": 7, "screen_height": 3}
     }
   ],
   "2016/09": [
@@ -793,7 +793,7 @@
     {
       "answer_a":   "a_code[-5]",
       "answer_b":   "None",
-      "extra":      "'chips=value-5,value-2'"
+      "extra":      {"microchips":  [5, 2]}
     }
   ],
   "2016/12": [
@@ -827,13 +827,13 @@
       "input_data": "a_code[22]",
       "answer_a":   "a_code[34]",
       "answer_b":   "None",
-      "extra":      "'disk_length=12'"
+      "extra":      {"disk_length": 12}
     },
     {
       "input_data": "a_code[38]",
       "answer_a":   "a_code[52]",
       "answer_b":   "None",
-      "extra":      "'disk_length=20'"
+      "extra":      {"disk_length": 20}
     }
   ],
   "2016/17": [
@@ -856,13 +856,13 @@
       "input_data": "a_code[10]",
       "answer_a":   "str(a_pre[1].count('.'))",
       "answer_b":   "None",
-      "extra":      "'n_rows=3'"
+      "extra":      {"n_rows": 3}
     },
     {
       "input_data": "a_pre[2].splitlines()[0]",
       "answer_a":   "a_code[-2]",
       "answer_b":   "None",
-      "extra":      "'n_rows=10'"
+      "extra":      {"n_rows": 10}
     }
   ],
   "2016/19": [
@@ -874,7 +874,7 @@
     {
       "answer_a":   "a_code[-2]",
       "answer_b":   "'2'",
-      "extra":      "'max=9'"
+      "extra":      {"max_val": 9}
     }
   ],
   "2016/21": [
@@ -882,7 +882,7 @@
       "input_data": "[li.codes[0] for li in a_li[6:]]",
       "answer_a":   "a_code[-2]",
       "answer_b":   "None",
-      "extra":      "'start=abcde'"
+      "extra":      {"start": "abcde"}
     }
   ],
   "2016/22": [
@@ -1125,7 +1125,7 @@
       "input_data": "a_code[6]",
       "answer_a":   "a_code[-4]",
       "answer_b":   "None",
-      "extra":      "'n=5'"
+      "extra":      {"n": 5}
     },
     {
       "input_data": "''",
@@ -1221,7 +1221,7 @@
       "input_data": "a_pre[3]",
       "answer_a":   "a_code[-2]",
       "answer_b":   "None",
-      "extra":      "'iterations=2'"
+      "extra":      {"iterations": 2}
     }
   ],
   "2017/22": [
@@ -1324,7 +1324,7 @@
   "2018/07": [
     {
       "answer_b":   "b_em[0]",
-      "extra":      "'delay=0,n_workers=2'"
+      "extra":      {"delay": 0, "n_workers": 2}
     }
   ],
   "2018/08": [
@@ -1701,13 +1701,13 @@
       "input_data": "a_code[2]",
       "answer_a":   "'1'",
       "answer_b":   "None",
-      "extra":      "'im=3x2'"
+      "extra":      {"image_width": 3, "image_height": 2}
     },
     {
       "input_data": "b_code[5]",
       "answer_a":   "None",
       "answer_b":   "'\u27cb'",
-      "extra":      "'im=2x2'"
+      "extra":      {"image_width": 2, "image_height": 2}
     }
   ],
   "2019/09": [
@@ -1757,12 +1757,12 @@
     {
       "answer_a":   "a_code[-4]",
       "answer_b":   "b_code[0]",
-      "extra":      "'ta=10'"
+      "extra":      {"ta": 10}
     },
     {
       "input_data": "a_pre[3]",
       "answer_a":   "a_pre[4].split()[-1]",
-      "extra":      "'ta=100'"
+      "extra":      {"ta": 100}
     }
   ],
   "2019/13": [],
@@ -1892,7 +1892,7 @@
   "2019/24": [
     {
       "input_data": "a_pre[0][15:45]",
-      "extra":      "'tb=10'"
+      "extra":      {"tb": 10}
     }
   ],
   "2019/25": [],
@@ -2478,7 +2478,7 @@
   ],
   "2023/11": [
     {
-      "extra":      "'expansion_factor=100'"
+      "extra":      {"expansion_factor": 100}
     }
   ],
   "2023/12": [
@@ -2514,6 +2514,43 @@
       "input_data": "a_pre[2]",
       "answer_a":   "a_code[-2]",
       "answer_b":   "None"
+    }
+  ],
+  "2023/21": [
+    {
+      "answer_a":   "a_code[-3]",
+      "answer_b":   "b_code[6]",
+      "extra":      {"n_steps": 6}
+    },
+    {
+      "answer_a":   "None",
+      "answer_b":   "b_code[8]",
+      "extra":      {"n_steps": 10}
+    },
+    {
+      "answer_a":   "None",
+      "answer_b":   "b_code[10]",
+      "extra":      {"n_steps": 50}
+    },
+    {
+      "answer_a":   "None",
+      "answer_b":   "b_code[12]",
+      "extra":      {"n_steps": 100}
+    },
+    {
+      "answer_a":   "None",
+      "answer_b":   "b_code[14]",
+      "extra":      {"n_steps": 500}
+    },
+    {
+      "answer_a":   "None",
+      "answer_b":   "b_code[16]",
+      "extra":      {"n_steps": 1000}
+    },
+    {
+      "answer_a":   "None",
+      "answer_b":   "b_code[18]",
+      "extra":      {"n_steps": 5000}
     }
   ]
 }
