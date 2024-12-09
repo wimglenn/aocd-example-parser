@@ -1,5 +1,5 @@
 --editable .
-advent-of-code-data >= 3.0.0
+advent-of-code-data >= 2.0.4
 pytest
 pytest-mock
 pytest-cov
