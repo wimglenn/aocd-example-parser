@@ -19,4 +19,4 @@ def test_locator_extra_context():
     page = Page.from_raw(html=fake_prose)
     examples = extract_examples(page)
     [example] = examples
-    assert example.extra == {"microchips": [5, 2]}
+    assert example.extra == {"chip1": 5, "chip2": 2}
