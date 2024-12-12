@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import ast
 import pathlib
 import sys
 
@@ -11,13 +12,40 @@ here = pathlib.Path(__file__).parent
 input_dir = here.parent.parent / "advent-of-code-wim" / "tests"
 
 
-def remove_trailing_comments(lines):
+def split_trailing_comments(lines):
+    extra = []
     while lines and (not lines[-1].strip() or lines[-1].startswith("#")):
-        lines.pop()
-    if len(lines):
-        lines[-1] = lines[-1].split("#")[0].strip()
-    if len(lines) > 1:
-        lines[-2] = lines[-2].split("#")[0].strip()
+        extra.append(lines.pop())
+    if len(lines) and "#" in lines[-1]:
+        line, comment = lines[-1].split("#", 1)
+        lines[-1] = line.strip()
+        extra.append(comment.strip())
+    if len(lines) > 1 and "#" in lines[-2]:
+        line, comment = lines[-2].split("#", 1)
+        lines[-2] = line.strip()
+        extra.append(comment.strip())
+    extra = [x.strip() for x in extra if x.strip()]
+    return extra
+
+
+def parse_extra_context(extra):
+    result = {}
+    for line in extra:
+        equals = line.count("=")
+        commas = line.count(",")
+        if equals and equals == commas + 1:
+            for part in line.split(","):
+                k, v = part.strip().split("=")
+                k = k.strip()
+                v = v.strip()
+                try:
+                    v = ast.literal_eval(v)
+                except ValueError:
+                    pass
+                if k in result:
+                    raise NotImplementedError(f"Duplicate key {k!r}")
+                result[k] = v
+    return result
 
 
 def main():
@@ -40,7 +68,8 @@ def main():
                     rc += 1
                     continue
             lines = example_file.read_text(encoding="utf-8").splitlines()
-            remove_trailing_comments(lines)
+            extra = split_trailing_comments(lines)
+            expected_extra = parse_extra_context(extra)
             *lines, expected_answer_a, expected_answer_b = lines
             expected_input_data = "\n".join(lines).rstrip()
             diff = compare(
@@ -59,6 +88,15 @@ def main():
                 )
                 if diff is not None:
                     print(f"incorrect answer {part} ({i}) for", puzzle.url, diff)
+                    rc += 1
+            if example.extra or expected_extra:
+                diff = compare(
+                    actual=example.extra,
+                    expected=expected_extra,
+                    raises=False,
+                )
+                if diff is not None:
+                    print(f"incorrect extra ({i}) for", puzzle.url, diff)
                     rc += 1
     sys.exit(rc)
 

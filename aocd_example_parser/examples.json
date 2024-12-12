@@ -793,7 +793,7 @@
     {
       "answer_a":   "a_code[-5]",
       "answer_b":   "None",
-      "extra":      {"microchips":  [5, 2]}
+      "extra":      {"chip1": 5, "chip2": 2}
     }
   ],
   "2016/12": [
@@ -1183,7 +1183,8 @@
   ],
   "2017/16": [
     {
-      "input_data": "','.join([li.codes[0] for li in a_li[3:]])"
+      "input_data": "','.join([li.codes[0] for li in a_li[3:]])",
+      "extra":      {"n_programs":  5, "iterations": 2}
     }
   ],
   "2017/17": [
@@ -1757,12 +1758,12 @@
     {
       "answer_a":   "a_code[-4]",
       "answer_b":   "b_code[0]",
-      "extra":      {"ta": 10}
+      "extra":      {"iterations": 10}
     },
     {
       "input_data": "a_pre[3]",
       "answer_a":   "a_pre[4].split()[-1]",
-      "extra":      {"ta": 100}
+      "extra":      {"iterations": 100}
     }
   ],
   "2019/13": [],
@@ -1892,7 +1893,7 @@
   "2019/24": [
     {
       "input_data": "a_pre[0][15:45]",
-      "extra":      {"tb": 10}
+      "extra":      {"iterations": 10}
     }
   ],
   "2019/25": [],
@@ -2518,7 +2519,7 @@
   ],
   "2023/21": [
     {
-      "answer_a":   "a_code[-3]",
+      "answer_a":   "a_code[-4]",
       "answer_b":   "b_code[6]",
       "extra":      {"n_steps": 6}
     },
