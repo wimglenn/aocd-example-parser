@@ -2553,5 +2553,122 @@
       "answer_b":   "b_code[18]",
       "extra":      {"n_steps": 5000}
     }
+  ],
+  "2024/01": [
+    {
+      "answer_b":   "b_code[-2] "
+    }
+  ],
+  "2024/03": [
+    {
+      "answer_a":   "a_code[-3] ",
+      "answer_b":   "None"
+    },
+    {
+      "input_data": "b_code[-8]",
+      "answer_a":   "None",
+      "answer_b":   "b_code[-2] "
+    }
+  ], 
+  "2024/04":  [
+    {
+      "input_data": "a_code[-7]",
+      "answer_a":   "a_code[-5]",
+      "answer_b":   "b_code[-2]"
+    }
+  ],
+  "2024/08":  [
+    {
+      "answer_b":   "b_code[-2]"
+    },
+    {
+      "input_data": "b_pre[1]",
+      "answer_a":   "None",
+      "answer_b":   "b_code[3]"
+    }
+  ],
+  "2024/10":  [
+    {
+      "input_data":   "a_code[-11]"
+    }
+  ],
+  "2024/11":  [
+    {
+      "input_data":   "a_pre[0].splitlines()[1]"
+    }
+  ],
+  "2024/12":  [
+    {
+      "input_data":   "a_pre[0]",
+      "answer_a":     "a_code[47]",
+      "answer_b":     "b_code[15]"
+    },
+    {
+      "input_data":   "a_pre[2]",
+      "answer_a":     "a_code[52]",
+      "answer_b":     "b_code[18]"
+    },
+    {
+      "input_data":   "a_pre[-1]"
+    },
+    {
+      "input_data":   "b_pre[1]",
+      "answer_a":     "None",
+      "answer_b":     "b_code[25]"
+    },
+    {
+      "input_data":   "b_pre[2]",
+      "answer_a":     "None",
+      "answer_b":     "b_code[26]"
+    }
+  ],
+  "2024/13":  [
+    {
+      "answer_a":   "a_code[-2]",
+      "answer_b":   "None"
+    }
+  ],
+  "2024/14":  [
+    {
+      "answer_a":   "a_code[-3]",
+      "extra":      {"width": 11, "height": 7}
+    }
+  ],
+  "2024/15":  [
+    {
+      "answer_a":   "a_code[-2]"
+    },
+    {
+      "input_data": "a_pre[1]",
+      "answer_a":   "a_code[-1]",
+      "answer_b":   "None"
+    }
+  ],
+  "2024/16":  [
+    {
+      "answer_a":   "a_code[6]",
+      "answer_b":   "b_code[5]"
+    },
+    {
+      "input_data": "a_pre[-2]",
+      "answer_a":   "a_code[-2]",
+      "answer_b":   "b_code[-2]"
+    }
+  ],
+  "2024/17":  [
+    {
+      "answer_b":   "None"
+    },
+    {
+      "input_data": "b_pre[0]",
+      "answer_a":   "None",
+      "answer_b":   "b_code[-4]"
+    }
+  ],
+  "2024/18":  [
+    {
+      "answer_a":   "a_code[-4]",
+      "extra":      {"max_coordinate": 6, "steps": 12}
+    }
   ]
 }
