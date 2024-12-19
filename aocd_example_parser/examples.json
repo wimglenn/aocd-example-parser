@@ -2554,6 +2554,12 @@
       "extra":      {"n_steps": 5000}
     }
   ],
+  "2023/23": [
+    {
+      "answer_a":   "a_code[-6]",
+      "answer_b":   "b_code[-2]"
+    }
+  ],
   "2024/01": [
     {
       "answer_b":   "b_code[-2] "
