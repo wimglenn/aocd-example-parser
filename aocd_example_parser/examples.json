@@ -2666,7 +2666,7 @@
   "2024/18":  [
     {
       "answer_a":   "a_code[-4]",
-      "extra":      {"max_coordinate": 6, "steps": 12}
+      "extra":      {"width": 6, "n_bytes": 12}
     }
   ]
 }
