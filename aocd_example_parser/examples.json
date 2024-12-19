@@ -2672,7 +2672,7 @@
   "2024/18":  [
     {
       "answer_a":   "a_code[-4]",
-      "extra":      {"width": 6, "n_bytes": 12}
+      "extra":      {"width": 7, "n_bytes": 12}
     }
   ],
   "2024/19":  [
