@@ -2639,7 +2639,6 @@
     },
     {
       "input_data": "a_pre[1]",
-      "answer_a":   "a_code[-1]",
       "answer_b":   "None"
     }
   ],
