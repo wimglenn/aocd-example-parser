@@ -2668,5 +2668,10 @@
       "answer_a":   "a_code[-4]",
       "extra":      {"width": 6, "n_bytes": 12}
     }
+  ],
+  "2024/19":  [
+    {
+      "answer_b":   "b_code[-2]"
+    }
   ]
 }
