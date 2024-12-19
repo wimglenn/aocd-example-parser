@@ -2599,7 +2599,6 @@
   ],
   "2024/12":  [
     {
-      "input_data":   "a_pre[0]",
       "answer_a":     "a_code[47]",
       "answer_b":     "b_code[15]"
     },
