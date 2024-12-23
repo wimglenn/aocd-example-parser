@@ -2559,5 +2559,17 @@
       "answer_a":   "a_code[-6]",
       "answer_b":   "b_code[-2]"
     }
+  ],
+  "2023/24": [
+    {
+      "answer_a":   "a_code[-3]",
+      "answer_b":   "b_code[-2]",
+      "extra":      {"test_area_min": 7, "test_area_max": 27}
+    }
+  ],
+  "2023/25": [
+    {
+      "input_data": "a_pre[1]"
+    }
   ]
 }
