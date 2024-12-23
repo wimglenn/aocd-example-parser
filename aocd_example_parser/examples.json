@@ -2704,7 +2704,8 @@
     },
     {
       "input_data": "b_pre[-1]",
-      "answer_a":   "None"
+      "answer_a":   "None",
+      "answer_b":   "b_code[-2]"
     }
   ],
   "2024/23":  [
