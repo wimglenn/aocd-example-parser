@@ -2691,5 +2691,38 @@
     {
       "answer_b":   "b_code[-2]"
     }
+  ],
+  "2024/20":  [
+    {
+      "answer_a":   "'44'",
+      "answer_b":   "None",
+      "extra":      {"dt_min": 2}
+    },
+    {
+      "answer_a":   "None",
+      "answer_b":   "'285'",
+      "extra":      {"dt_min": 50}
+    }
+  ],
+  "2024/21":  [
+    {
+      "input_data":   "a_pre[-2]"
+    }
+  ],
+  "2024/22":  [
+    {
+      "input_data": "a_pre[1]",
+      "answer_b":   "None"
+    },
+    {
+      "input_data": "b_pre[-1]",
+      "answer_a":   "None",
+      "answer_b":   "b_code[-2]"
+    }
+  ],
+  "2024/23":  [
+    {
+      "answer_a":   "a_code[-3]"
+    }
   ]
 }
