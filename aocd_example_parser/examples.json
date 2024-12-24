@@ -2574,7 +2574,7 @@
   ],
   "2024/01": [
     {
-      "answer_b":   "b_code[-2] "
+      "answer_b":   "b_code[-2]"
     }
   ],
   "2024/03": [
@@ -2585,7 +2585,7 @@
     {
       "input_data": "b_code[-8]",
       "answer_a":   "None",
-      "answer_b":   "b_code[-2] "
+      "answer_b":   "b_code[-2]"
     }
   ], 
   "2024/04":  [
