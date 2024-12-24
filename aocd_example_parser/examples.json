@@ -2724,5 +2724,15 @@
     {
       "answer_a":   "a_code[-3]"
     }
+  ],
+  "2024/24":  [
+    {
+      "answer_a":   "a_code[-8]",
+      "answer_b":   "None"
+    },
+    {
+      "input_data": "a_pre[-2]",
+      "answer_a":   "a_code[-2]"
+    }
   ]
 }
