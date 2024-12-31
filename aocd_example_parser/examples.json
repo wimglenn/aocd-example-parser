@@ -2728,12 +2728,14 @@
   "2024/24":  [
     {
       "answer_a":   "a_code[-8]",
-      "answer_b":   "None"
+      "answer_b":   "None",
+      "extra":      {"n_swapped_pairs": 0}
     },
     {
       "input_data": "a_pre[-2]",
       "answer_a":   "a_code[-2]",
-      "answer_b":   "None"
+      "answer_b":   "None",
+      "extra":      {"n_swapped_pairs": 0}
     },
     {
       "input_data": "b_pre[-2]",
