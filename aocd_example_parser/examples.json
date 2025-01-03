@@ -381,57 +381,14 @@
   "2015/18": [
     {
       "input_data": "a_pre[1].split('\\n\\n')[0].split(':\\n')[1]",
-      "answer_a":   "str(a_pre[1].split('\\n\\n')[1].count('#'))",
+      "answer_a":   "str(a_pre[1].split('\\n\\n')[-1].count('#'))",
       "answer_b":   "None",
-      "extra":      {"iterations": 1}
-    },
-    {
-      "input_data": "a_pre[1].split('\\n\\n')[1].split(':\\n')[1]",
-      "answer_a":   "str(a_pre[1].split('\\n\\n')[2].count('#'))",
-      "answer_b":   "None",
-      "extra":      {"iterations": 1}
-    },
-    {
-      "input_data": "a_pre[1].split('\\n\\n')[2].split(':\\n')[1]",
-      "answer_a":   "str(a_pre[1].split('\\n\\n')[3].count('#'))",
-      "answer_b":   "None",
-      "extra":      {"iterations": 1}
-    },
-    {
-      "input_data": "a_pre[1].split('\\n\\n')[3].split(':\\n')[1]",
-      "answer_a":   "str(a_pre[1].split('\\n\\n')[4].count('#'))",
-      "answer_b":   "None",
-      "extra":      {"iterations": 1}
+      "extra":      {"iterations": 4}
     },
     {
       "input_data": "b_pre[0].split('\\n\\n')[0].split(':\\n')[1]",
       "answer_a":   "None",
-      "answer_b":   "str(b_pre[0].split('\\n\\n')[1].count('#'))",
-      "extra":      {"iterations": 1}
-    },
-    {
-      "input_data": "b_pre[0].split('\\n\\n')[1].split(':\\n')[1]",
-      "answer_a":   "None",
-      "answer_b":   "str(b_pre[0].split('\\n\\n')[2].count('#'))",
-      "extra":      {"iterations": 1}
-    },
-    {
-      "input_data": "b_pre[0].split('\\n\\n')[2].split(':\\n')[1]",
-      "answer_a":   "None",
-      "answer_b":   "str(b_pre[0].split('\\n\\n')[3].count('#'))",
-      "extra":      {"iterations": 1}
-    },
-    {
-      "input_data": "b_pre[0].split('\\n\\n')[3].split(':\\n')[1]",
-      "answer_a":   "None",
-      "answer_b":   "str(b_pre[0].split('\\n\\n')[4].count('#'))",
-      "extra":      {"iterations": 1}
-    },
-    {
-      "input_data": "b_pre[0].split('\\n\\n')[4].split(':\\n')[1]",
-      "answer_a":   "None",
-      "answer_b":   "str(b_pre[0].split('\\n\\n')[5].count('#'))",
-      "extra":      {"iterations": 1}
+      "extra":      {"iterations": 5}
     }
   ],
   "2015/19": [
@@ -2372,7 +2329,8 @@
   ],
   "2022/15": [
     {
-      "answer_a":   "a_code[-2]"
+      "answer_a":   "a_code[-2]",
+      "extra":      {"y": 10, "maxd":  20}
     }
   ],
   "2022/17": [
