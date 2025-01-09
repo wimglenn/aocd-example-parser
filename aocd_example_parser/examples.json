@@ -1184,8 +1184,23 @@
   ],
   "2017/22": [
     {
+      "answer_a":   "a_code[-7]",
+      "answer_b":   "None",
+      "extra":      {"iterations": 7}
+    },
+    {
+      "answer_a":   "a_code[-4]",
+      "answer_b":   "None",
+      "extra":      {"iterations": 70}
+    },
+    {
       "answer_a":   "a_code[-2]",
       "answer_b":   "b_code[-2]"
+    },
+    {
+      "answer_a":   "None",
+      "answer_b":   "b_code[-4]",
+      "extra":      {"iterations": 100}
     }
   ],
   "2017/23": [],
@@ -1752,6 +1767,30 @@
   ],
   "2019/15": [],
   "2019/16": [
+    {
+      "input_data": "a_code[-8]",
+      "answer_a":   "a_pre[0].split('1 phase: ')[1].split()[0]",
+      "answer_b":   "None",
+      "extra":      {"iterations": 1}
+    },
+    {
+      "input_data": "a_code[-8]",
+      "answer_a":   "a_pre[0].split('2 phases: ')[1].split()[0]",
+      "answer_b":   "None",
+      "extra":      {"iterations": 2}
+    },
+    {
+      "input_data": "a_code[-8]",
+      "answer_a":   "a_pre[0].split('3 phases: ')[1].split()[0]",
+      "answer_b":   "None",
+      "extra":      {"iterations": 3}
+    },
+    {
+      "input_data": "a_code[-8]",
+      "answer_a":   "a_pre[0].split('4 phases: ')[1].split()[0]",
+      "answer_b":   "None",
+      "extra":      {"iterations": 4}
+    },
     {
       "input_data": "a_code[-6]",
       "answer_a":   "a_code[-5]",
