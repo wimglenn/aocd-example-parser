@@ -6,6 +6,8 @@ import sys
 from testfixtures import compare
 
 from aocd.models import Puzzle
+from aocd.examples import Page
+from aocd_example_parser.extraction import _locators
 
 
 here = pathlib.Path(__file__).parent
@@ -50,7 +52,37 @@ def parse_extra_context(extra):
 
 def main():
     rc = 0
+    locators = _locators()
+    defaults = locators["default_locators"]
     for puzzle in Puzzle.all():
+        page = Page.from_raw(html=puzzle._get_prose())
+        scope = {"page": page}
+        part_b_locked = page.article_b is None
+        parts = "a" if part_b_locked else "ab"
+        for part in parts:
+            for tag in "code", "pre", "em", "li":
+                name = f"{part}_{tag}"
+                scope[name] = getattr(page, name)
+        key = f"{page.year}/{page.day:02d}"
+        if key in locators:
+            for loc in locators[key]:
+                for k in "input_data", "answer_a", "answer_b":
+                    if k in loc:
+                        pos = loc[k]
+                        default = defaults[k]
+                        results = []
+                        for p in pos, default:
+                            try:
+                                val = eval(p, scope)
+                            except Exception:
+                                val = None
+                            if isinstance(val, (tuple, list)):
+                                val = "\n".join(val)
+                            if val is not None:
+                                val = val.rstrip("\r\n")
+                            results.append(val)
+                        if results[0] == results[1] and results[0] is not None:
+                            print(f"redundant reference locator for {key}: {pos}")
         date = f"{puzzle.year}/{puzzle.day:02d}"
         example_dir = input_dir / date
         egs = [x.name.split(".")[0] for x in example_dir.glob("*.txt")]
