@@ -29,3 +29,10 @@ Home = "https://github.com/wimglenn/aocd-example-parser"
 [project.entry-points."adventofcode.examples"]
 simple = "aocd_example_parser:simple"
 reference = "aocd_example_parser:reference"
+
+[tool.pytest.ini_options]
+addopts = """
+  --disable-socket
+  --cov=aocd_example_parser
+  --cov-report=html --cov-report=term-missing:skip-covered
+  --cov-fail-under=100"""
