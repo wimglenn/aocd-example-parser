@@ -2740,5 +2740,10 @@
       "answer_b":   "b_code[-11]",
       "extra":      {"n_swapped_pairs": 2, "operation": "bitwise_and"}
     }
+  ],
+  "2025/01":  [
+    {
+      "answer_b":   "b_code[-5]"
+    }
   ]
 }
