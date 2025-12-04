@@ -6,12 +6,12 @@ build-backend = "flit_core.buildapi"
 name = "aocd-example-parser"
 version = "2025.12.4"
 description = "Implementation of example parser plugins for advent-of-code-data"
+license = "MIT"
 readme = "README.md"
 requires-python = ">=3.9"
 classifiers = [
     "Intended Audience :: Developers",
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Topic :: Software Development :: Libraries",
     "Topic :: Games/Entertainment :: Puzzle Games",
 ]
@@ -19,9 +19,6 @@ classifiers = [
 [[project.authors]]
 name = "Wim Jeantine-Glenn"
 email = "hey@wimglenn.com"
-
-[project.license]
-file = "LICENSE"
 
 [project.urls]
 Home = "https://github.com/wimglenn/aocd-example-parser"
