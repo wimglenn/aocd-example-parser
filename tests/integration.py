@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import argparse
 import ast
 import pathlib
 import sys
@@ -49,6 +50,9 @@ def parse_extra_context(extra):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-v", "--verbose", action="store_true")
+    args = parser.parse_args()
     rc = 0
     for puzzle in Puzzle.all():
         date = f"{puzzle.year}/{puzzle.day:02d}"
@@ -98,6 +102,8 @@ def main():
                 if diff is not None:
                     print(f"incorrect extra ({i}) for", puzzle.url, diff)
                     rc += 1
+            if args.verbose:
+                print("OK", example_file)
     sys.exit(rc)
 
 
