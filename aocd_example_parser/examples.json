@@ -2755,5 +2755,11 @@
     {
       "extra":      {"n_pairs": 10}
     }
+  ],
+  "2025/09": [
+    {
+      "answer_a":   "a_code[-4]",
+      "answer_b":   "b_code[-4]"
+    }
   ]
 }

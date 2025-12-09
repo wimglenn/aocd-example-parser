@@ -103,7 +103,7 @@ def main():
                     print(f"incorrect extra ({i}) for", puzzle.url, diff)
                     rc += 1
             if args.verbose:
-                print("OK", example_file)
+                print("processed", example_file)
     sys.exit(rc)
 
 
