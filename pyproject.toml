@@ -4,7 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "aocd-example-parser"
-version = "2025.12.9"
+version = "2025.12.11"
 description = "Implementation of example parser plugins for advent-of-code-data"
 license = "MIT"
 readme = "README.md"
