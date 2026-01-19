@@ -4,7 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "aocd-example-parser"
-version = "2025.12.11"
+version = "2025.12.12"
 description = "Implementation of example parser plugins for advent-of-code-data"
 license = "MIT"
 readme = "README.md"
@@ -21,7 +21,7 @@ name = "Wim Jeantine-Glenn"
 email = "hey@wimglenn.com"
 
 [project.urls]
-Home = "https://github.com/wimglenn/aocd-example-parser"
+Homepage = "https://github.com/wimglenn/aocd-example-parser"
 
 [project.entry-points."adventofcode.examples"]
 simple = "aocd_example_parser:simple"
